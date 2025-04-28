@@ -146,6 +146,11 @@ header ul{
     justify-content: space-around;
 }
 
+.imagen-carrusel{
+    width: 50%;
+    height: 50%;
+}
+
 .caja-contacto{
     display: grid;
     grid-template-columns: repeat(2, 50%);
