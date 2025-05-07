@@ -157,11 +157,11 @@ header ul{
     grid-template-rows: 60px repeat(5, 90px);
     grid-template-areas:
     "contacto1 contacto2"
-    "ubicacion formulario"
-    "ubicacion formulario"
-    "ubicacion formulario"
-    "ubicacion formulario"
-    "ubicacion formulario";
+    "formulario ubicacion"
+    "formulario ubicacion"
+    "formulario ubicacion"
+    "formulario ubicacion"
+    "formulario ubicacion";
     justify-items: center;
     padding: 20px 0;
 }
@@ -177,54 +177,71 @@ header ul{
 }
 
 .ubicacion{
-    grid-column: 1/2;
+    grid-column: 2/3;
     grid-row: 2/7;
+    width: 100%;
 }
 
 .formulario{
-    grid-column: 2/3;
+    grid-column: 1/2;
     grid-row: 2/7;
     display: grid;
     flex-direction: column;
+    width: 100%;
 }
 
 .nombre{
     align-content: center;
+    padding-left: 5%;
+    width: 100%;
 }
 
 .apellido{
     align-content: center;
+    padding-left: 5%;
+    width: 100%;
 }
 
 .email{
     align-content: center;
+    padding-left: 5%;
     justify-content: flex-start;
+    width: 100%;
 }
 
 .motivo{
     align-content: center;
     align-items: flex-end;
+    padding-left: 5%;
+    width: 100%;
 }
+ .selector-motivo{
+
+    width: 75%;
+ }
 
 .mensaje{
     align-content: start;
+    padding-left: 5%;
+    width: 100%;
 }
 
 .boton_enviar{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    background-color: lightblue;
+    background-color: lightblue;    
+    width: 75%;
 }
 
 label{
     display: inline;
-    width: 200px;
+    width: 100%;
     font-size: 2rem;
 }
 
 input{
-    width: 400px;
+    width: 75%;
     height: 30%;
     border-radius: 5px;
 }
@@ -284,6 +301,16 @@ footer a{
 /* mobile */
 
 @media (max-width:480px){
+
+    .caja-contacto{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        height: 75%;
+    }
+
     footer{
         display: flex;
         justify-content: center;
@@ -301,6 +328,17 @@ footer a{
 }
 
 @media (min-width:481px) and (max-width:769px){
+
+    .caja-contacto{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        height: 75%;
+    }
+
+
     footer{
         display: flex;
         justify-content: center;
