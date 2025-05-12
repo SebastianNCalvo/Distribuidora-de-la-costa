@@ -92,7 +92,6 @@ h2{
 
 
 h3{
-    /* background-color: aqua; */
     color: rgb(253, 40, 40);
     font-size: 1.5rem;
     font-style: normal;
@@ -123,9 +122,6 @@ main ul{
     list-style: none;
 }
 
-header ul{
-    display: flex
-}
 
 .productos{
     margin: 2% 0;
@@ -222,10 +218,9 @@ header ul{
     padding-left: 5%;
     width: 100%;
 }
- .selector-motivo{
-
+.selector-motivo{
     width: 75%;
- }
+}
 
 .mensaje{
     align-content: start;
