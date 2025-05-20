@@ -38,6 +38,17 @@ main{
         }
     }
 
+    .ofertas-resaltadas{
+        background-color: yellow;
+        @include tamano(20%, auto);
+        text-align: center;
+        margin-left: 10%;
+        margin-top: 2.5%;
+        h3{
+            padding: 0%
+        }
+    }
+
     img{
         @include tamano (250px, auto);
     }   
@@ -59,7 +70,7 @@ main{
         }
         input{
             background-color: $fondo1;
-            @include tamano (50%, 40px);
+            @include tamano (170px, 50px);
             border-radius: 35px;
             font-size: 2rem;
             font-weight: $pesolinks;
