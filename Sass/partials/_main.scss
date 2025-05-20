@@ -5,7 +5,7 @@ main{
 
     h2{
         @include flex-justify(center);
-        font-size: 2rem;
+        font-size: 1.8rem;
         padding: 1.5rem;
         text-decoration: underline;
 
@@ -13,7 +13,7 @@ main{
 
     h3{
         color: red;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         font-style: normal;
         margin: 1% 0;
         padding-left: 30px;
@@ -47,12 +47,28 @@ main{
     }
 
     .cajita{
+        
         @include flex-justify(center);
-        padding: 2%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 2%;
+        p{
+            font-weight: $pesolinks;
+            font-size: 1.5rem;
+        }
+        input{
+            background-color: $fondo1;
+            @include tamano (50%, 40px);
+            border-radius: 35px;
+            font-size: 2rem;
+            font-weight: $pesolinks;
+        }
     }
 
     .img_shadow{
         box-shadow: -10px 10px 13px -3px rgba(0,0,0,0.58);
+        border-radius: 5%;
     }
 
     .carrusel{
