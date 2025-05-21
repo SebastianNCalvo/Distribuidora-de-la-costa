@@ -181,8 +181,12 @@ main .caja-contacto .formulario .nombre label, main .caja-contacto .formulario .
 }
 main .caja-contacto .formulario .nombre input, main .caja-contacto .formulario .mensaje input, main .caja-contacto .formulario .motivo input, main .caja-contacto .formulario .email input, main .caja-contacto .formulario .apellido input {
   width: 75%;
-  height: 30%;
+  height: 30px;
   border-radius: 5px;
+  font-size: 1.5rem;
+}
+main .caja-contacto .formulario .motivo .selector-motivo {
+  font-size: 2rem;
 }
 main .caja-contacto .formulario .mensaje textarea {
   width: 75%;
@@ -198,6 +202,7 @@ main .caja-contacto .formulario .boton_enviar {
   width: 75%;
   height: auto;
   border-radius: 10px;
+  font-size: 2rem;
 }
 main .caja-contacto .ubicacion {
   display: flex;

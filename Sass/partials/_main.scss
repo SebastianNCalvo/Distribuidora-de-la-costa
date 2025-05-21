@@ -126,8 +126,9 @@ main{
                     @include lebel;
                 }
                 input{
-                    @include tamano (75%, 30%);
+                    @include tamano (75%, 30px);
                     border-radius: 5px;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -141,6 +142,9 @@ main{
 
             .motivo{
                 @extend .nombre;
+                .selector-motivo{
+                    font-size: 2rem;
+                }
             }    
             .mensaje{
                 @extend .nombre;
@@ -157,6 +161,7 @@ main{
 
                 @include tamano(75%, auto);
                 border-radius: 10px;
+                font-size: 2rem;
             }
         }
 
