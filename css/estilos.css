@@ -113,6 +113,10 @@ main .ofertas-resaltadas h3 {
 main img {
   width: 250px;
   height: auto;
+  transition: 200ms;
+}
+main img:hover {
+  translate: 0 -10px;
 }
 main .productos {
   margin: 2% 0;
@@ -136,6 +140,8 @@ main .cajita input {
   border-radius: 35px;
   font-size: 2rem;
   font-weight: bold;
+  border: unset;
+  cursor: pointer;
 }
 main .img_shadow {
   box-shadow: -10px 10px 13px -3px rgba(0, 0, 0, 0.58);
