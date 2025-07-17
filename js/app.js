@@ -140,6 +140,32 @@ function probandoObjeto(){
             alert(`El valor ingresado no es valido. Damos por finalizada su compra.
         El total es de $${total}`)
         }
+    } else if(eleccionCategoria == 3 || eleccionCategoria === "snack"){
+        eleccionSnack2()
+        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
+        if(finalCompra === "Si" || finalCompra === "si"){
+            probandoObjeto();
+        } else if(finalCompra === "No" || finalCompra === "no"){
+            alert(`Usted compró ${listaDeCompras2}.
+            El total es de $${total}
+            ¡Gracias por su compra!`)
+        } else {
+            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
+        El total es de $${total}`)
+        }
+    } else if(eleccionCategoria == 4 || eleccionCategoria === "pizza"){
+        eleccionPizza2()
+        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
+        if(finalCompra === "Si" || finalCompra === "si"){
+            probandoObjeto();
+        } else if(finalCompra === "No" || finalCompra === "no"){
+            alert(`Usted compró ${listaDeCompras2}.
+            El total es de $${total}
+            ¡Gracias por su compra!`)
+        } else {
+            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
+        El total es de $${total}`)
+        }
     }
 }
 
@@ -161,6 +187,36 @@ function eleccionAlfajores2() {
 
 function eleccionChocolates2() {
     for(let objeto of productosAlmacen2.filter(productosAlmacen2 => productosAlmacen2.categoria === "chocolate")){
+        eleccion2 = prompt('Tenemos ' + objeto.nombre + ' a un precio de ' + objeto.precio +'. ¿Desea agregarlo al carrito? Indique "Si" o "No" ')
+        if (eleccion2 === "Si" || eleccion2 === "si"){
+            cantidadIngresada = prompt('Indique la cantidad de unidades:')
+            total = total + cantidadIngresada * objeto.precio
+            listaDeCompras2.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
+        } else if (eleccion2 === "No" || eleccion2 === "no"){
+            alert('Le muestro el siguiente producto')
+        } else {
+            alert('Opción no valida. Operación cancelada')
+        }
+    }
+}
+
+function eleccionSnack2() {
+    for(let objeto of productosAlmacen2.filter(productosAlmacen2 => productosAlmacen2.categoria === "snack")){
+        eleccion2 = prompt('Tenemos ' + objeto.nombre + ' a un precio de ' + objeto.precio +'. ¿Desea agregarlo al carrito? Indique "Si" o "No" ')
+        if (eleccion2 === "Si" || eleccion2 === "si"){
+            cantidadIngresada = prompt('Indique la cantidad de unidades:')
+            total = total + cantidadIngresada * objeto.precio
+            listaDeCompras2.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
+        } else if (eleccion2 === "No" || eleccion2 === "no"){
+            alert('Le muestro el siguiente producto')
+        } else {
+            alert('Opción no valida. Operación cancelada')
+        }
+    }
+}
+
+function eleccionPizza2() {
+    for(let objeto of productosAlmacen2.filter(productosAlmacen2 => productosAlmacen2.categoria === "pizza")){
         eleccion2 = prompt('Tenemos ' + objeto.nombre + ' a un precio de ' + objeto.precio +'. ¿Desea agregarlo al carrito? Indique "Si" o "No" ')
         if (eleccion2 === "Si" || eleccion2 === "si"){
             cantidadIngresada = prompt('Indique la cantidad de unidades:')
