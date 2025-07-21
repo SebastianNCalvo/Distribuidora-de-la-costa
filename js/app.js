@@ -1,3 +1,12 @@
+// Explicación del simulador:
+
+// ¡Buenas tardes Profe! La idea del simulador es emular un carrito de compras. Como la interaccion solo se da atraves de prompt, los productos son mostrados de a 1 y esperando que el cliente agrege o no al carrito.
+
+// Funcionamiento del simulador:
+
+// Dicho simulador comienza con la función de seleccionar la categoria del producto, a la cual se accede por el número de dicha categoria o por el nombre de la misma.
+// Se ejecuta una función de la categoria seleccionada, la cual recorre el array filtrando la categoria y mostrandole uno a uno los productos con su valor por unidad. Una vez seleccionados, se especifica la cantidad y son pusheados al carrito que posteriormente será mostrado, detallando el ticket de gasto.
+
 const nombre = prompt('¡Bienvenido! Ingrese su nombre por favor:');
 
 let productosAlmacen = [
@@ -85,19 +94,18 @@ let productosAlmacen = [
 ]
 
 let cantidadIngresada;
-let listaDeCompras = [];
 let listaDeComprasConsola = [];
 let total = 0;
 let eleccion;
 let finalCompra;
 
-function seleccionarProducto(){
+function seleccionarCategoria(){
     eleccionCategoria = prompt(`¡Hola ${nombre}! En nuestro almacen contamos con productos como: 1) Alfajores, 2) Chocolates, 3) Snacks y 4) Pizzas. ¿En cuál de dichos productos está interesado?`)
     if(eleccionCategoria == 1 || eleccionCategoria === "Alfajores"){
         eleccionAlfajores()
         finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
         if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarProducto();
+            seleccionarCategoria();
         } else if(finalCompra === "No" || finalCompra === "no"){
             alert(`El total es de $${total}.
             Por consola verá impreso su ticket.
@@ -112,7 +120,7 @@ function seleccionarProducto(){
         eleccionChocolates()
         finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
         if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarProducto();
+            seleccionarCategoria();
         } else if(finalCompra === "No" || finalCompra === "no"){
             alert(`El total es de $${total}.
             Por consola verá impreso su ticket.
@@ -127,7 +135,7 @@ function seleccionarProducto(){
         eleccionSnack()
         finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
         if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarProducto();
+            seleccionarCategoria();
         } else if(finalCompra === "No" || finalCompra === "no"){
             alert(`El total es de $${total}.
             Por consola verá impreso su ticket.
@@ -142,7 +150,7 @@ function seleccionarProducto(){
         eleccionPizza()
         finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
         if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarProducto();
+            seleccionarCategoria();
         } else if(finalCompra === "No" || finalCompra === "no"){
             alert(`El total es de $${total}.
             Por consola verá impreso su ticket.
@@ -154,7 +162,7 @@ function seleccionarProducto(){
             ¡Gracias por su compra!`)
         }
     } else{
-        seleccionarProducto()
+        seleccionarCategoria()
     }
 }
 
@@ -177,7 +185,6 @@ function eleccionAlfajores() {
         if (eleccion === "Si" || eleccion === "si"){
             cantidadIngresadaComoEntero()
             total = total + cantidadIngresada * objeto.precio
-            listaDeCompras.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
             listaDeComprasConsola.push(objeto.categoria + ` ` + objeto.nombre + ` ${cantidadIngresada} ud ` + `$` + cantidadIngresada*objeto.precio)
         } else if (eleccion === "No" || eleccion === "no"){
             alert('Le muestro el siguiente producto')
@@ -193,7 +200,6 @@ function eleccionChocolates() {
         if (eleccion === "Si" || eleccion === "si"){
             cantidadIngresadaComoEntero()
             total = total + cantidadIngresada * objeto.precio
-            listaDeCompras.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
             listaDeComprasConsola.push(objeto.categoria + ` ` + objeto.nombre + ` ${cantidadIngresada} ud ` + `$` +  cantidadIngresada*objeto.precio)
         } else if (eleccion === "No" || eleccion === "no"){
             alert('Le muestro el siguiente producto')
@@ -209,7 +215,6 @@ function eleccionSnack() {
         if (eleccion === "Si" || eleccion === "si"){
             cantidadIngresadaComoEntero()
             total = total + cantidadIngresada * objeto.precio
-            listaDeCompras.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
             listaDeComprasConsola.push(objeto.categoria + ` ` + objeto.nombre + ` ${cantidadIngresada} ud ` + `$` +  cantidadIngresada*objeto.precio)
         } else if (eleccion === "No" || eleccion === "no"){
             alert('Le muestro el siguiente producto')
@@ -225,7 +230,6 @@ function eleccionPizza() {
         if (eleccion === "Si" || eleccion === "si"){
             cantidadIngresadaComoEntero()
             total = total + cantidadIngresada * objeto.precio
-            listaDeCompras.push(`${cantidadIngresada} ud de ` + objeto.categoria + ` `+ objeto.nombre )
             listaDeComprasConsola.push(objeto.categoria + ` ` + objeto.nombre + ` ${cantidadIngresada} ud ` + `$` +  cantidadIngresada*objeto.precio)
         } else if (eleccion === "No" || eleccion === "no"){
             alert('Le muestro el siguiente producto')
@@ -236,10 +240,11 @@ function eleccionPizza() {
 }
 
 function ticketPorConsola() {
+    listaDeComprasConsola.push(`Total a pagar $${total}`)
     console.log(listaDeComprasConsola)
 }
 
 window.onload = function(){
-    seleccionarProducto()
+    seleccionarCategoria()
     ticketPorConsola()
 }
