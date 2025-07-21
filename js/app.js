@@ -103,67 +103,16 @@ function seleccionarCategoria(){
     eleccionCategoria = prompt(`¡Hola ${nombre}! En nuestro almacen contamos con productos como: 1) Alfajores, 2) Chocolates, 3) Snacks y 4) Pizzas. ¿En cuál de dichos productos está interesado?`)
     if(eleccionCategoria == 1 || eleccionCategoria === "Alfajores"){
         eleccionAlfajores()
-        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
-        if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarCategoria();
-        } else if(finalCompra === "No" || finalCompra === "no"){
-            alert(`El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        } else {
-            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
-            El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        }
     } else if(eleccionCategoria == 2 || eleccionCategoria === "Chocolates"){
         eleccionChocolates()
-        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
-        if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarCategoria();
-        } else if(finalCompra === "No" || finalCompra === "no"){
-            alert(`El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        } else {
-            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
-            El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        }
     } else if(eleccionCategoria == 3 || eleccionCategoria === "snack"){
         eleccionSnack()
-        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
-        if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarCategoria();
-        } else if(finalCompra === "No" || finalCompra === "no"){
-            alert(`El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        } else {
-            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
-            El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        }
     } else if(eleccionCategoria == 4 || eleccionCategoria === "pizza"){
-        eleccionPizza()
-        finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
-        if(finalCompra === "Si" || finalCompra === "si"){
-            seleccionarCategoria();
-        } else if(finalCompra === "No" || finalCompra === "no"){
-            alert(`El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        }else {
-            alert(`El valor ingresado no es valido. Damos por finalizada su compra.
-            El total es de $${total}.
-            Por consola verá impreso su ticket.
-            ¡Gracias por su compra!`)
-        }
+        eleccionPizza()      
     } else{
         seleccionarCategoria()
     }
+    finalDeLaCompra()
 }
 
 function cantidadIngresadaComoEntero() {
@@ -172,9 +121,8 @@ function cantidadIngresadaComoEntero() {
     if (cantidadIngresada === null || cantidadIngresada == undefined) {
       return cantidadIngresada = 0;
     }
-    
     cantidadIngresada = Number(cantidadIngresada);
-    
+
   } while (!Number.isInteger(cantidadIngresada) || cantidadIngresada < 1);
   return cantidadIngresada;
 }
@@ -236,6 +184,22 @@ function eleccionPizza() {
         } else {
             alert('Opción no valida. Operación cancelada')
         }
+    }
+}
+
+function finalDeLaCompra() {
+    finalCompra = prompt('¿Desea comprar algo más? Indique "Si" o "No"')
+    if(finalCompra === "Si" || finalCompra === "si"){
+        seleccionarCategoria();
+    } else if(finalCompra === "No" || finalCompra === "no"){
+        alert(`El total es de $${total}.
+            Por consola verá impreso su ticket.
+            ¡Gracias por su compra!`)
+    } else {
+        alert(`El valor ingresado no es valido. Damos por finalizada su compra.
+        El total es de $${total}.
+        Por consola verá impreso su ticket.
+        ¡Gracias por su compra!`)
     }
 }
 
