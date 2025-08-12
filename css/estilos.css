@@ -133,6 +133,9 @@ main .cajita p {
   font-weight: bold;
   font-size: 1.5rem;
 }
+main .cajita span {
+  font-size: 2.5rem;
+}
 main .cajita input {
   background-color: #4f959d;
   width: 170px;

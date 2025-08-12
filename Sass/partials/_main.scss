@@ -73,6 +73,9 @@ main{
             font-weight: $pesolinks;
             font-size: 1.5rem;
         }
+        span{
+            font-size: 2.5rem;
+        }
         input{
             background-color: $fondo1;
             @include tamano (170px, 50px);
